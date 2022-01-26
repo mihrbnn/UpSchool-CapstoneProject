@@ -11,15 +11,17 @@
 
 /* home */
 #home-header {
-  background-image: url(./images/homebackground.jpg);
+  background-image: url(./images/background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 500px;
+  min-height: 550px;
+  opacity: 80%;
 }
 
 .container {
-  min-height: 500px;
+  min-height: 550px;
+  background-color: linear-gradient(to right, #1e272e, #485460);
 }
 
 .btn {

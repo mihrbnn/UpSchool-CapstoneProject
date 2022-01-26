@@ -8,13 +8,13 @@ const Navbar = (props) => {
         </StyledNavLink>
       </StyledNavList>
       <StyledNavList>
-        <StyledNavLink as="a" href="/about">
-          About
+        <StyledNavLink as="a" href="/login">
+          Login
         </StyledNavLink>
       </StyledNavList>
       <StyledNavList>
-        <StyledNavLink as="a" href="/contacts">
-          Contact
+        <StyledNavLink as="a" href="/profile">
+          Profile
         </StyledNavLink>
       </StyledNavList>
     </StyledUl>

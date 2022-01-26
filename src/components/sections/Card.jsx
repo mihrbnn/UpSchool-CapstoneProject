@@ -9,15 +9,17 @@ import {
 } from "../../styledComponents";
 
 const Card = (props) => {
-  const { poster_path, title, release_date } = props;
+  const { poster_path, title, release_date, genresMovie } = props;
   return (
     <CardContainer>
       <CardBody>
         <ImgContainer>
-          <Img src={`https://image.tmdb.org/t/p/w342${poster_path}`} alt="" />
+          <Img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt="" />
         </ImgContainer>
-        {/* <Text>{genres.name}</Text> */}
         <Title>{title}</Title>
+        <Text>
+          {genresMovie?.map((item, index) => (index ? " / " : "") + item.name)}
+        </Text>
         <Text>{release_date}</Text>
         <CardButton>MORE DETAIL</CardButton>
       </CardBody>

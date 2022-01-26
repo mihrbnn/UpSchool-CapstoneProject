@@ -8,6 +8,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { store } from "./reduxStore";
 import { ReactQueryDevtools } from "react-query/devtools";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const queryClient = new QueryClient();
 

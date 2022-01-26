@@ -8,6 +8,7 @@ const CardContainer = styled.div`
   border: 10px;
   border-radius: 5px;
   height: 650px;
+  text-align: center;
   /* background-color: ${(props) => props.theme.cardWrapperBg}; */
 `;
 
@@ -18,11 +19,18 @@ const CardBody = styled.div`
 `;
 
 const ImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
   width: 342px;
 `;
-const Img = styled.img``;
+const Img = styled.img`
+  display: flex;
+  justify-content: center;
+`;
 
-const Title = styled.h3`
+const Title = styled.h4`
+  margin-top: 3px;
   padding-left: 8px;
   font-weight: bold;
   text-align: start;
