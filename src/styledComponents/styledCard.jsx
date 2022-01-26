@@ -22,7 +22,7 @@ const ImgContainer = styled.div`
 `;
 const Img = styled.img``;
 
-const Header = styled.h3`
+const Title = styled.h3`
   padding-left: 8px;
   font-weight: bold;
   text-align: start;
@@ -55,4 +55,4 @@ const CardButton = styled.button`
   }
 `;
 
-export { CardContainer, CardBody, ImgContainer, Img, Header, Text, CardButton };
+export { CardContainer, CardBody, ImgContainer, Img, Title, Text, CardButton };

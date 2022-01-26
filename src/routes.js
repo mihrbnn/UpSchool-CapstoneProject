@@ -4,6 +4,7 @@ import Login from "./components/pages/Login";
 import MovieDetail from "./components/pages/MovieDetail";
 import Profile from "./components/pages/Profile";
 import SortFilterMovie from "./components/pages/SortFilterMovie";
+import SearchMovie from "./components/sections/SearchMovie";
 
 const routes = [
   { title: "Home", path: "/", element: Home, isNav: true },
@@ -16,6 +17,12 @@ const routes = [
     isNav: false,
   },
   { title: "Profile", path: "profile", element: Profile, isNav: true },
+  {
+    title: "Search",
+    path: "search",
+    element: SearchMovie,
+    isNav: false,
+  },
   {
     title: "SortFilterMovie",
     path: "login",
