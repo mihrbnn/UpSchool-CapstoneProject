@@ -2,10 +2,8 @@ import { combineReducers, createStore } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import themeReducer from "./theme";
-import { WatchedMovieReducer } from "./watchHistory";
 
 const rootReducer = combineReducers({
-  watchHistory: WatchedMovieReducer,
   theme: themeReducer,
 });
 

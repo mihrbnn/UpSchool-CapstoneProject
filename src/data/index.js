@@ -21,3 +21,6 @@ export const fetchMovie = (movieId) =>
 //recommendations
 export const fetchRecommendations = (movieId) =>
   BASE_URL.get(`/movie/${movieId}/recommendations?api_key=${api_key}`);
+//cast
+export const fetchCast = (movieId) =>
+  BASE_URL.get(`/movie/${movieId}/credits?api_key=${api_key}`);

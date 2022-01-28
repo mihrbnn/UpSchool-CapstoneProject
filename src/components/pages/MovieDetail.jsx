@@ -1,24 +1,13 @@
-import { fetchMovie, fetchRecommendations } from "../../data";
+import { fetchMovie, fetchCast } from "../../data";
 import { useQuery } from "react-query";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  MovieContainer,
-  MovieContent,
-  MovieImgDiv,
-  MovieImg,
-  MovieContentText,
-  MovieContentTitle,
-  MovieText,
-} from "../../styledComponents";
-
+import DetailCard from "../sections/DetailCard";
 const MovieDetail = () => {
   const params = useParams();
-  console.log("movieparams:::", params.movieId);
 
+  //movie
   const [movieId, setMovieId] = useState("");
-  // const [movies, setMovies] = useState([]);
-
   const { data } = useQuery(
     ["movideDetail", movieId],
     () => fetchMovie(params.movieId),
@@ -27,31 +16,30 @@ const MovieDetail = () => {
     }
   );
 
-  // useEffect(() => {
-  //   setMovies(data);
-  // }, []);
-
-  // console.log("movies", movies);
-  console.log("dataaa", data?.data);
+  //crew-cast
+  const castData = useQuery(
+    ["castData", movieId],
+    () => fetchCast(params.movieId),
+    {
+      retry: false,
+    }
+  );
 
   return (
-    <MovieContainer>
-      <MovieContent>
-        <MovieImgDiv>
-          <MovieImg
-            src={`https://image.tmdb.org/t/p/w300${data?.data?.poster_path}`}
-            alt="Movie Poster"
-          />
-        </MovieImgDiv>
-        <MovieContentText>
-          <MovieContentTitle>
-            {data?.data?.title} ({data?.data?.release_date.split("-")[0]})
-            <MovieText className="p-2">{data?.data?.runtime} min</MovieText>
-          </MovieContentTitle>
-          <MovieText>{data?.data?.overview}</MovieText>
-        </MovieContentText>
-      </MovieContent>
-    </MovieContainer>
+    <DetailCard
+      poster_path={data?.data?.poster_path}
+      title={data?.data?.title}
+      overview={data?.data?.overview}
+      release_date={data?.data?.release_date.split("-")[0]}
+      runtime={data?.data?.runtime}
+      crewName1={castData?.data?.data?.crew[0].name}
+      crewName2={castData?.data?.data?.crew[1].name}
+      crewName3={castData?.data?.data?.crew[2].name}
+      crewDepart1={castData?.data?.data?.crew[0].known_for_department}
+      crewDepart2={castData?.data?.data?.crew[1].known_for_department}
+      crewDepart3={castData?.data?.data?.crew[2].known_for_department}
+      cast={castData?.data?.data?.cast}
+    />
   );
 };
 

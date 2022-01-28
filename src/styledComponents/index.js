@@ -43,6 +43,12 @@ import {
   MovieContentText,
   MovieContentTitle,
   MovieText,
+  CastContainer,
+  CastContent,
+  CastImgDiv,
+  CastImg,
+  CastContentText,
+  CastText,
 } from "../styledComponents/styledDetailCard";
 export {
   Nav,
@@ -80,4 +86,10 @@ export {
   MovieContentText,
   MovieContentTitle,
   MovieText,
+  CastContainer,
+  CastContent,
+  CastImgDiv,
+  CastImg,
+  CastContentText,
+  CastText,
 };

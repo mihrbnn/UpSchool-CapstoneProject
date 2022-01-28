@@ -6,13 +6,14 @@ const MovieContainer = styled.section`
   align-items: center;
   width: 100%;
   margin-top: 7rem;
+  overflow: hidden;
 `;
 
 const MovieContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background-color: ${(props) => props.theme.BACKGROUND_COLOR};
   @media only screen and (max-width: 1000px) {
     flex-direction: column;
   }
@@ -85,6 +86,89 @@ const MovieText = styled.p`
   }
 `;
 
+//cast
+
+const CastContainer = styled.section`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 100%;
+  margin-top: 7rem;
+`;
+
+const CastContent = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: ${(props) => props.theme.BACKGROUND_COLOR};
+  /* @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+  } */
+`;
+
+const CastImgDiv = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const CastImg = styled.img`
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 4px;
+  height: 300px;
+
+  /* @media only screen and (min-width: 300px) {
+    width: 300px;
+  }
+  @media only screen and (min-width: 400px) {
+    width: 400px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 500px;
+  }
+  @media only screen and (min-width: 800px) {
+    width: 800px;
+  }
+  @media only screen and (min-width: 1000px) {
+    width: 500px;
+    height: 400px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 600px;
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 750px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 900px;
+  } */
+`;
+
+const CastContentText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  /* @media only screen and (min-width: 1200px) {
+    padding: 3rem 6rem;
+  }
+  @media only screen and (min-width: 1500px) {
+    padding: 3rem 9rem;
+  } */
+`;
+
+const CastText = styled.p`
+  font-size: 1.8rem;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+`;
+
 export {
   MovieContainer,
   MovieContent,
@@ -93,4 +177,10 @@ export {
   MovieContentText,
   MovieContentTitle,
   MovieText,
+  CastContainer,
+  CastContent,
+  CastImgDiv,
+  CastImg,
+  CastContentText,
+  CastText,
 };

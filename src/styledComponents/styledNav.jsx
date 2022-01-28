@@ -48,8 +48,8 @@ const NavbarContainer = styled(Container)`
 const NavLogo = styled(Link)`
   color: ${(props) => props.theme.TEXT_COLOR};
   display: flex;
-  align-items: center;
   text-decoration: none;
+  align-items: center;
   font-size: 2.2rem;
   &:hover {
     transform: traslateY(-3rem);
