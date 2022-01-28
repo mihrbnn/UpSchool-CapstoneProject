@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const CardContainer = styled.div`
   padding: 0 0 32px;
@@ -9,19 +10,19 @@ const CardContainer = styled.div`
   border-radius: 5px;
   height: 650px;
   text-align: center;
-  /* background-color: ${(props) => props.theme.cardWrapperBg}; */
+  background-color: ${(props) => props.theme.CARD};
 `;
 
 const CardBody = styled.div`
   padding-bottom: 30px;
   border-width: 10px;
   border-color: black;
+  text-align: center;
 `;
 
 const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
-
   width: 342px;
 `;
 const Img = styled.img`
@@ -34,6 +35,8 @@ const Title = styled.h4`
   padding-left: 8px;
   font-weight: bold;
   text-align: start;
+  text-align: center;
+  color: ${(props) => props.theme.CARD_TITLE};
 `;
 
 const Text = styled.p`
@@ -41,20 +44,20 @@ const Text = styled.p`
   font-weight: bold;
   text-align: start;
   color: grey;
+  text-align: center;
 `;
 const CardButton = styled.button`
-  display: block;
-  width: 25%;
-  padding: 12px 0;
-  margin-top: 50px;
+  display: d-flex;
+  justify-content: center;
+  width: 50%;
+  padding: 5px 20px;
   font-family: inherit;
   font-size: 14px;
   font-weight: 700;
-  /* color: ${(props) => props.theme.cardButtonColor};
-  background-color: ${(props) => props.theme.cardButtonBg}; */
-  border: 0;
-  border-radius: 35px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  background-color: ${(props) => props.theme.BUTTON_COLOR};
+  border: 2px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   &:hover {
@@ -63,4 +66,17 @@ const CardButton = styled.button`
   }
 `;
 
-export { CardContainer, CardBody, ImgContainer, Img, Title, Text, CardButton };
+const CardLink = styled(Link)`
+  text-decoration: none;
+`;
+
+export {
+  CardContainer,
+  CardBody,
+  ImgContainer,
+  Img,
+  Title,
+  Text,
+  CardButton,
+  CardLink,
+};

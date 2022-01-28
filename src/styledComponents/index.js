@@ -1,8 +1,23 @@
 import {
-  StyledUl,
-  StyledNavLink,
-  StyledNavList,
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  NavIcon,
+  ThemeButton,
+  FilterButton,
+  Ul,
+  NavLink,
+  NavList,
 } from "../styledComponents/styledNav";
+
+import {
+  dropDiv,
+  dropUl,
+  dropLink,
+  dropLi,
+  dropButton,
+} from "../styledComponents/styledDropDown";
+
 import {
   CardContainer,
   ImgContainer,
@@ -11,14 +26,39 @@ import {
   Text,
   CardBody,
   CardButton,
+  CardLink,
 } from "../styledComponents/styledCard";
-import { FormGroup, Input, Button } from "../styledComponents/styledSearch";
-import { GlobalStyle } from "../styledComponents/globalStyles";
-
+import {
+  FormGroup,
+  Input,
+  SearchButton,
+} from "../styledComponents/styledSearch";
+import { GlobalStyle, Container } from "../styledComponents/globalStyles";
+import { Button } from "../styledComponents/styledButton";
+import {
+  MovieContainer,
+  MovieContent,
+  MovieImgDiv,
+  MovieImg,
+  MovieContentText,
+  MovieContentTitle,
+  MovieText,
+} from "../styledComponents/styledDetailCard";
 export {
-  StyledUl,
-  StyledNavList,
-  StyledNavLink,
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  NavIcon,
+  ThemeButton,
+  FilterButton,
+  Ul,
+  NavList,
+  NavLink,
+  dropDiv,
+  dropUl,
+  dropLink,
+  dropLi,
+  dropButton,
   CardContainer,
   CardBody,
   ImgContainer,
@@ -30,4 +70,14 @@ export {
   Input,
   Button,
   GlobalStyle,
+  Container,
+  SearchButton,
+  CardLink,
+  MovieContainer,
+  MovieContent,
+  MovieImgDiv,
+  MovieImg,
+  MovieContentText,
+  MovieContentTitle,
+  MovieText,
 };

@@ -6,10 +6,12 @@ import {
   Title,
   Text,
   CardButton,
+  CardLink,
 } from "../../styledComponents";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
-  const { poster_path, title, release_date, genresMovie } = props;
+  const { poster_path, title, release_date, genresMovie, id } = props;
   return (
     <CardContainer>
       <CardBody>
@@ -21,7 +23,12 @@ const Card = (props) => {
           {genresMovie?.map((item, index) => (index ? " / " : "") + item.name)}
         </Text>
         <Text>{release_date}</Text>
-        <CardButton>MORE DETAIL</CardButton>
+
+        <CardButton>
+          <CardLink className="text-white" to={`${id}`}>
+            MORE DETAIL
+          </CardLink>
+        </CardButton>
       </CardBody>
     </CardContainer>
   );

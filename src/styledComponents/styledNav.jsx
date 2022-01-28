@@ -1,23 +1,107 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+// import { Zap } from "@styled-icons/octicons";
+import { BsMoonFill } from "react-icons/bs";
+import { SiThemoviedatabase } from "react-icons/si";
+import { Container } from "./globalStyles";
 
-const StyledUl = styled.ul`
+const ThemeButton = styled(BsMoonFill)`
+  color: ${(props) => props.theme.TEXT_COLOR};
+  font-size: 1.4em;
+  display: d-flex;
+  align-items: center;
+  &:hover {
+    transform: traslateY(-3rem);
+    color: #a6a3befb;
+  }
+`;
+const FilterButton = styled.button`
+  display: block;
+  width: 25%;
+  padding: 12px 0;
+  margin-top: 50px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+`;
+
+const Nav = styled.nav`
+  background: ${(props) => props.theme.BACKGROUND_COLOR};
+  color: ${(props) => props.theme.TEXT_COLOR};
+  position: sticky;
+  height: 5em;
   display: flex;
   justify-content: center;
-  margin-top: 0;
-  padding: 2em;
-  /* background-color: ${(props) => props.theme.navbarBg}; */
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
 `;
 
-const StyledNavList = styled.li`
+const NavbarContainer = styled(Container)`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  ${Container};
 `;
 
-const StyledNavLink = styled(Link)`
-  font-size: 1.25em;
+const NavLogo = styled(Link)`
+  color: ${(props) => props.theme.TEXT_COLOR};
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  /* color: ${(props) => props.theme.navbarColor}; */
-  padding: 0.5em;
+  font-size: 2.2rem;
+  &:hover {
+    transform: traslateY(-3rem);
+    color: #a6a3befb;
+  }
 `;
 
-export { StyledUl, StyledNavList, StyledNavLink };
+const NavIcon = styled(SiThemoviedatabase)`
+  margin-right: 0.8rem;
+  &:hover {
+    transform: traslateY(-3rem);
+    color: #a6a3befb;
+  }
+`;
+
+const Ul = styled.ul`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+`;
+
+const NavList = styled.li`
+  list-style: none;
+  height: 80px;
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: ${(props) => props.theme.TEXT_COLOR};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 100%;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: traslateY(-3rem);
+    color: #a6a3befb;
+  }
+`;
+
+export {
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  NavIcon,
+  ThemeButton,
+  FilterButton,
+  Ul,
+  NavList,
+  NavLink,
+};

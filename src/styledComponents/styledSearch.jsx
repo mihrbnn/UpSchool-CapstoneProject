@@ -17,7 +17,7 @@ const Input = styled.input`
   margin-bottom: 0.5em;
 `;
 
-const Button = styled.button`
+const SearchButton = styled.button`
   background: green;
   color: white;
   font-size: 1em;
@@ -27,4 +27,4 @@ const Button = styled.button`
   border-radius: 3px;
   cursor: pointer;
 `;
-export { FormGroup, Input, Button };
+export { FormGroup, Input, SearchButton };
