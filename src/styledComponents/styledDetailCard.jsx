@@ -7,6 +7,7 @@ const MovieContainer = styled.section`
   width: 100%;
   margin-top: 7rem;
   overflow: hidden;
+  box-shadow: 0 30px 30px rgba(165, 161, 161, 0.08);
 `;
 
 const MovieContent = styled.div`
@@ -33,6 +34,8 @@ const MovieImg = styled.img`
   object-fit: cover;
   border-radius: 4px;
   height: 300px;
+  margin-left: 2rem;
+
   @media only screen and (min-width: 300px) {
     width: 300px;
   }
@@ -75,12 +78,13 @@ const MovieContentText = styled.div`
 `;
 
 const MovieContentTitle = styled.h2`
-  font-size: 3.6rem;
+  font-size: 2rem;
   font-weight: bold;
+  width: 100%;
 `;
 
 const MovieText = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   &:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -89,21 +93,12 @@ const MovieText = styled.p`
 //cast
 
 const CastContainer = styled.section`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   width: 100%;
-  margin-top: 7rem;
+  margin-top: 4rem;
 `;
 
 const CastContent = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   background-color: ${(props) => props.theme.BACKGROUND_COLOR};
-  /* @media only screen and (max-width: 1000px) {
-    flex-direction: column;
-  } */
 `;
 
 const CastImgDiv = styled.div`
@@ -118,34 +113,8 @@ const CastImg = styled.img`
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 10px;
   height: 300px;
-
-  /* @media only screen and (min-width: 300px) {
-    width: 300px;
-  }
-  @media only screen and (min-width: 400px) {
-    width: 400px;
-  }
-  @media only screen and (min-width: 600px) {
-    width: 500px;
-  }
-  @media only screen and (min-width: 800px) {
-    width: 800px;
-  }
-  @media only screen and (min-width: 1000px) {
-    width: 500px;
-    height: 400px;
-  }
-  @media only screen and (min-width: 1200px) {
-    width: 600px;
-  }
-  @media only screen and (min-width: 1500px) {
-    width: 750px;
-  }
-  @media only screen and (min-width: 1800px) {
-    width: 900px;
-  } */
 `;
 
 const CastContentText = styled.div`
@@ -154,18 +123,12 @@ const CastContentText = styled.div`
   justify-content: center;
   align-items: center;
   padding: 3rem;
-  /* @media only screen and (min-width: 1200px) {
-    padding: 3rem 6rem;
-  }
-  @media only screen and (min-width: 1500px) {
-    padding: 3rem 9rem;
-  } */
 `;
 
 const CastText = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   &:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 

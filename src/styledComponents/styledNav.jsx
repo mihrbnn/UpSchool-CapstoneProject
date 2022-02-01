@@ -29,7 +29,7 @@ const Nav = styled.nav`
   background: ${(props) => props.theme.BACKGROUND_COLOR};
   color: ${(props) => props.theme.TEXT_COLOR};
   position: sticky;
-  height: 5em;
+  height: 6em;
   display: flex;
   justify-content: center;
   align-items: center;

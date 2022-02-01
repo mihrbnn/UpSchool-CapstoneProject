@@ -11,14 +11,6 @@ import {
 } from "../styledComponents/styledNav";
 
 import {
-  dropDiv,
-  dropUl,
-  dropLink,
-  dropLi,
-  dropButton,
-} from "../styledComponents/styledDropDown";
-
-import {
   CardContainer,
   ImgContainer,
   Img,
@@ -50,6 +42,31 @@ import {
   CastContentText,
   CastText,
 } from "../styledComponents/styledDetailCard";
+
+import {
+  InputContainer,
+  LoginContainer,
+} from "../styledComponents/styledLogin";
+
+import {
+  FavoriteIcon,
+  WatchedIcon,
+  FavoriteIconFill,
+  WatchedIconFill,
+  InstagramIcon,
+  TwitterIcon,
+  LogOutIcon,
+} from "../styledComponents/icons";
+
+import {
+  ProfileContent,
+  ProfileImgDiv,
+  ProfileImg,
+  ProfileContentText,
+  ProfileContentTitle,
+  ProfileText,
+  ProfileLink,
+} from "../styledComponents/styledProfile";
 export {
   Nav,
   NavbarContainer,
@@ -60,11 +77,6 @@ export {
   Ul,
   NavList,
   NavLink,
-  dropDiv,
-  dropUl,
-  dropLink,
-  dropLi,
-  dropButton,
   CardContainer,
   CardBody,
   ImgContainer,
@@ -92,4 +104,20 @@ export {
   CastImg,
   CastContentText,
   CastText,
+  InputContainer,
+  LoginContainer,
+  FavoriteIcon,
+  WatchedIcon,
+  FavoriteIconFill,
+  WatchedIconFill,
+  InstagramIcon,
+  TwitterIcon,
+  LogOutIcon,
+  ProfileContent,
+  ProfileImgDiv,
+  ProfileImg,
+  ProfileContentText,
+  ProfileContentTitle,
+  ProfileText,
+  ProfileLink,
 };

@@ -1,33 +1,50 @@
 import styled from "styled-components";
-import { BsStar } from "react-icons/bs";
-import { ImBookmark } from "react-icons/im";
-import { BsMoon } from "react-icons/bs";
-import { BsMoonFill } from "react-icons/bs";
+import {
+  BsBookmarkFill,
+  BsTwitter,
+  BsInstagram,
+  BsBookmark,
+  BsHeart,
+  BsHeartFill,
+} from "react-icons/bs";
+import { FiLogOut } from "react-icons/fi";
 
-const FavoriteIcon = styled(BsStar)`
+const FavoriteIcon = styled(BsHeart)`
   font-size: 25px;
-  position: absolute;
 `;
 
-const WatchedIcon = styled(ImBookmark)`
+const WatchedIcon = styled(BsBookmark)`
   font-size: 25px;
-  position: absolute;
 `;
 
-const LightIcon = styled(BsMoon)`
-  transition: transform 3s ease-out;
-  &:hover {
-    transform: rotate(360deg);
-    color: white;
-  }
+const FavoriteIconFill = styled(BsHeartFill)`
+  font-size: 25px;
 `;
 
-const DarkIcon = styled(BsMoonFill)`
-  transition: transform 2s ease-out;
-  &:hover {
-    transform: rotate(360deg);
-    color: white;
-  }
+const WatchedIconFill = styled(BsBookmarkFill)`
+  font-size: 25px;
 `;
 
-export { FavoriteIcon, WatchedIcon, LightIcon, DarkIcon };
+const InstagramIcon = styled(BsInstagram)`
+  font-size: 25px;
+  color: ${(props) => props.theme.BUTTON_COLOR};
+`;
+
+const TwitterIcon = styled(BsTwitter)`
+  font-size: 25px;
+  color: ${(props) => props.theme.BUTTON_COLOR};
+`;
+
+const LogOutIcon = styled(FiLogOut)`
+  font-size: 25px;
+`;
+
+export {
+  FavoriteIcon,
+  WatchedIcon,
+  FavoriteIconFill,
+  WatchedIconFill,
+  InstagramIcon,
+  TwitterIcon,
+  LogOutIcon,
+};

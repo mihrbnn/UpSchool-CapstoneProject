@@ -10,7 +10,7 @@ export const lightTheme = {
   TEXT_COLOR: "#34516e",
   CARD: "#F4BEEE",
   CARD_TITLE: "#34516e",
-  BUTTON_COLOR: "#F4BEEE",
+  BUTTON_COLOR: "#EA99D5",
 };
 
 // export { CardContainer, CardBody, ImgContainer, Img, Title, Text, CardButton };

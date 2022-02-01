@@ -28,6 +28,7 @@ const ImgContainer = styled.div`
 const Img = styled.img`
   display: flex;
   justify-content: center;
+  border-radius: 10px;
 `;
 
 const Title = styled.h4`
@@ -51,6 +52,8 @@ const CardButton = styled.button`
   justify-content: center;
   width: 50%;
   padding: 5px 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-family: inherit;
   font-size: 14px;
   font-weight: 700;

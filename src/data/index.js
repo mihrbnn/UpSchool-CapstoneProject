@@ -14,13 +14,24 @@ export const fetchMovieGenres = () =>
   BASE_URL.get(`/genre/movie/list?api_key=${api_key}`);
 //search movie
 export const fetchSearchMovie = (query) =>
-  BASE_URL.get(`search/movie?api_key=${api_key}&query=${query}`);
+  query && BASE_URL.get(`search/movie?api_key=${api_key}&query=${query}`);
 //movie detail
 export const fetchMovie = (movieId) =>
   BASE_URL.get(`/movie/${movieId}?api_key=${api_key}`);
-//recommendations
-export const fetchRecommendations = (movieId) =>
-  BASE_URL.get(`/movie/${movieId}/recommendations?api_key=${api_key}`);
 //cast
 export const fetchCast = (movieId) =>
   BASE_URL.get(`/movie/${movieId}/credits?api_key=${api_key}`);
+
+//sort;
+export const fetchSortFilter = (sortValue, startDate, endDate, genre) =>
+  BASE_URL.get(
+    `/discover/movie?api_key=${api_key}&sort_by=${sortValue}&release_date.lte=${startDate}&release_date.gte=${endDate}&with_genres=${genre}`
+  );
+
+//top rated-popular
+export const fetchTopRatedPopular = (category, page) =>
+  BASE_URL.get(`/movie/${category}?api_key=${api_key}&page=${page}`);
+
+// //popular
+// export const fetchPopular = (page) =>
+//   BASE_URL.get(`/movie/popular?api_key=${api_key}&page=${page}`);

@@ -33,7 +33,6 @@ const DetailCard = (props) => {
     genresMovie,
   } = props;
 
-  console.log("detaygenres::", genresMovie);
   return (
     <>
       <MovieContainer>

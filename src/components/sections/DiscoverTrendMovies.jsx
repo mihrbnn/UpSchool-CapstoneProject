@@ -13,19 +13,29 @@ import sliderSettings from "../sections/slider";
 const DiscoverTrendMovies = (props) => {
   //trending movies
   const [period, setPeriod] = useState("week");
-  const [trendMovies, setTrendMovies] = useState([]);
 
-  const { data } = useQuery(
+  const { data: trendMovies } = useQuery(
     ["trending", period],
     () => fetchTrendingMovies(period),
+    { select: (data) => data.data.results },
     {
       retry: false,
     }
   );
 
+  const [trends, setTrends] = useState([]);
+
   useEffect(() => {
-    setTrendMovies(data);
-  }, [data]);
+    // fetchTrendingMovies(period);
+    setTrends(trendMovies);
+    console.log("period", period);
+  }, [trendMovies, period]);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setTrendMovies(data);
+  //   }, 200);
+  // }, [data]);
 
   //discover movies
   const discovers = useQuery("discovers", fetchDiscoverMovies, {
@@ -37,8 +47,6 @@ const DiscoverTrendMovies = (props) => {
     retry: false,
   });
 
-  console.log("trends", data);
-  console.log("period::", period);
   return (
     <>
       <div className="mt-4 py-5">
@@ -61,25 +69,30 @@ const DiscoverTrendMovies = (props) => {
 
       <div className="py-4">
         <h2 className="py-5 text-center">TRENDING</h2>
-        <Button
-          type="button"
-          onClick={() => {
-            setPeriod("week");
-          }}
-        >
-          WEEKLY
-        </Button>
-        <Button
-          type="button"
-          onClick={() => {
-            setPeriod("day");
-          }}
-        >
-          DAILY
-        </Button>
+        <div className="d-flex ms-4 mb-4">
+          <Button
+            type="button"
+            onClick={() => {
+              setPeriod("day");
+            }}
+          >
+            Daily
+          </Button>
+
+          <Button
+            type="button"
+            onClick={() => {
+              setPeriod("week");
+            }}
+          >
+            Weekly
+          </Button>
+        </div>
+
         <Slider {...sliderSettings}>
-          {trendMovies?.data?.results?.map((item, index) => (
+          {trends?.map((item, index) => (
             <Card
+              id={item.id}
               key={item.id}
               poster_path={item.poster_path}
               title={item.title}
