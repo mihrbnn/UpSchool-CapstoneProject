@@ -1,12 +1,10 @@
 import "./App.css";
 import Navbar from "./components/base/Navbar";
-import Footer from "./components/base/Footer";
 import { Routes, Route } from "react-router-dom";
 import routes from "./routes";
-import { GlobalStyle } from "../src/styledComponents";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./styledComponents/styledTheme";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function App() {
   // const { theme } = useSelector((state) => state);
@@ -23,14 +21,12 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === true ? lightTheme : darkTheme}>
-      {/* <GlobalStyle /> */}
       <Navbar />
       <Routes>
         {routes.map((item, index) => (
           <Route key={index} path={item.path} element={<item.element />} />
         ))}
       </Routes>
-      {/* <Footer /> */}
     </ThemeProvider>
   );
 }

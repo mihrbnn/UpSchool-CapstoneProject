@@ -7,13 +7,11 @@ import {
   Ul,
   NavList,
   NavLink,
-  Button,
   LogOutIcon,
 } from "../../styledComponents";
 // import ChangeThemeButton from "../../styledComponents/styledToggler";
 import { useSelector, useDispatch } from "react-redux";
 import { changeTheme } from "../../reduxStore/theme";
-import user from "../../user.json";
 import { Link } from "react-router-dom";
 import { userLogin } from "../../reduxStore/userLogin";
 const Navbar = (props) => {
@@ -81,6 +79,7 @@ const Navbar = (props) => {
                     width="60"
                     height="60"
                     src="https://picsum.photos/id/1027/200/200"
+                    alt=""
                   />
                 ) : (
                   <img
@@ -88,6 +87,7 @@ const Navbar = (props) => {
                     width="60"
                     height="60"
                     src="https://picsum.photos/id/433/200/200"
+                    alt=""
                   />
                 )}
               </NavLink>

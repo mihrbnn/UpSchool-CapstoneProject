@@ -22,8 +22,6 @@ const Home = (props) => {
         return item.title.toLowerCase().includes(filter.toLowerCase());
       })
     );
-    console.log("searchdata::", searchData);
-    console.log("searched::", searched);
   }, [filter, searchData]);
 
   const handleSearch = (event) => {

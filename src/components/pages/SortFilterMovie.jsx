@@ -40,9 +40,7 @@ const SortFilter = () => {
   const [filterData, setFilterData] = useState(topRatedPopular);
 
   useEffect(() => {
-    // fetchTopRatedPopular(page, category, genre);
     setFilterData(topRatedPopular);
-    console.log("filterdata", filterData);
   }, []);
 
   useEffect(() => {
