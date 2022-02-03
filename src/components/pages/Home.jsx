@@ -38,7 +38,7 @@ const Home = (props) => {
   const debouncedOnChange = debounce(handleSearch, 3000);
 
   return (
-    <>
+    <div>
       <div id="home-header">
         <div className="container d-flex justify-content-center align-items-center">
           <div className="col-md-6">
@@ -67,7 +67,7 @@ const Home = (props) => {
       ) : (
         <DiscoverTrendMovies />
       )}
-    </>
+    </div>
   );
 };
 

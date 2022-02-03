@@ -69,7 +69,7 @@ const DiscoverTrendMovies = (props) => {
 
       <div className="py-4">
         <h2 className="py-5 text-center">TRENDING</h2>
-        <div className="d-flex ms-4 mb-4">
+        <div className="d-flex justify-content-center mb-4">
           <Button
             type="button"
             onClick={() => {

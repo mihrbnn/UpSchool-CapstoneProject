@@ -4,10 +4,11 @@ import {
   NavLogo,
   NavIcon,
   ThemeButton,
-  FilterButton,
   Ul,
   NavLink,
   NavList,
+  DropDownList,
+  DropDown,
 } from "../styledComponents/styledNav";
 
 import {
@@ -67,16 +68,27 @@ import {
   ProfileText,
   ProfileLink,
 } from "../styledComponents/styledProfile";
+
+import {
+  StyledTable,
+  THead,
+  TBody,
+  TR,
+  TH,
+  TD,
+} from "../styledComponents/styledTable";
+
 export {
   Nav,
   NavbarContainer,
   NavLogo,
   NavIcon,
   ThemeButton,
-  FilterButton,
   Ul,
   NavList,
   NavLink,
+  DropDownList,
+  DropDown,
   CardContainer,
   CardBody,
   ImgContainer,
@@ -120,4 +132,10 @@ export {
   ProfileContentTitle,
   ProfileText,
   ProfileLink,
+  StyledTable,
+  THead,
+  TBody,
+  TR,
+  TH,
+  TD,
 };

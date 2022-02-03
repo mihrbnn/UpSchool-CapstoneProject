@@ -11,13 +11,22 @@ import {
   ProfileContentTitle,
   ProfileText,
   ProfileLink,
+  StyledTable,
+  THead,
+  TBody,
+  TR,
+  TH,
+  TD,
 } from "../../styledComponents";
+import { useQuery } from "react-query";
+import { fetchMovieGenres } from "../../data";
 
 const Profile = () => {
   const seenMovies = useSelector((state) => state.seenMovies);
   const favorites = useSelector((state) => state.favorites);
   const { user } = useSelector((state) => state);
   const films = [...seenMovies, ...favorites]
+
     .filter((obj, index, arr) => {
       return arr.map((mapObj) => mapObj.id).indexOf(obj.id) === index;
     })
@@ -38,15 +47,19 @@ const Profile = () => {
   };
 
   //genres
-  // const genres = useQuery("genres", fetchMovieGenres, {
-  //   retry: false,
-  // });
-
-  // console.log("genres", genres?.data?.data?.genres);
-  // console.log("films", films);
+  const { data: genres } = useQuery(
+    "genres",
+    fetchMovieGenres,
+    {
+      retry: false,
+    },
+    {
+      select: (data) => data.data.genres,
+    }
+  );
 
   return (
-    <>
+    <div>
       {user.isLogin ? (
         <>
           <ProfileContent>
@@ -82,32 +95,31 @@ const Profile = () => {
             <option value="seen">Seen Movies</option>
             <option value="fav">Favorite Films</option>
           </select>
-          <table className="table w-75 mx-auto border">
-            <thead>
-              <tr>
-                <th scope="col">Film ID</th>
-                <th scope="col">Title</th>
-                <th scope="col">Genre</th>
-              </tr>
-            </thead>
-            <tbody>
+
+          <StyledTable className="table w-75 mx-auto border">
+            <THead>
+              <TR>
+                <TH scope="col">FILM ID</TH>
+                <TH scope="col">TTITLE</TH>
+                <TH scope="col">GENRE</TH>
+              </TR>
+            </THead>
+            <TBody>
               {items?.map((film) => {
                 return (
-                  <tr key={film.id}>
-                    <th scope={film.id}>{film.id}</th>
-                    <td>{film.title}</td>
-                    <td>
-                      {/* <h1>
-                    {genres?.data?.data?.genres
-                      ?.filter((genre) => film?.genre?.id?.includes(genre.id))
-                      .map((item, index) => (index ? " / " : "") + item.name)}
-                  </h1> */}
-                    </td>
-                  </tr>
+                  <TR key={film.id}>
+                    <TH scope={film.id}>{film.id}</TH>
+                    <TD>{film.title}</TD>
+                    <TD>
+                      {film?.genre?.map(
+                        (item, index) => (index ? " / " : "") + item.name
+                      )}
+                    </TD>
+                  </TR>
                 );
               })}
-            </tbody>
-          </table>
+            </TBody>
+          </StyledTable>
         </>
       ) : (
         <div className="h-100  container d-flex justify-content-center">
@@ -116,7 +128,7 @@ const Profile = () => {
           </h1>
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default Profile;

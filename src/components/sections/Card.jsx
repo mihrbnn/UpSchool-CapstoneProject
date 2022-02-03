@@ -28,7 +28,10 @@ const Card = (props) => {
     <CardContainer>
       <CardBody>
         <ImgContainer>
-          <Img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt="" />
+          <Img
+            src={`https://image.tmdb.org/t/p/original${poster_path}`}
+            alt=""
+          />
         </ImgContainer>
         <Title>{title}</Title>
         <Text>

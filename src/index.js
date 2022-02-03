@@ -11,6 +11,8 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-datepicker/dist/react-datepicker.css";
+
 const queryClient = new QueryClient();
 
 ReactDOM.render(

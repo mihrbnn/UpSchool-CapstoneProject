@@ -21,20 +21,22 @@ const MovieContent = styled.div`
 `;
 
 const MovieImgDiv = styled.div`
-  height: 100%;
-  width: 100%;
+  height: 500px;
   display: flex;
   justify-content: center;
+  width: 342px;
 `;
 
 const MovieImg = styled.img`
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
-  border-radius: 4px;
-  height: 300px;
-  margin-left: 2rem;
+  //background-size: cover;
+  //background-position: center;
+  /* background-repeat: no-repeat; */
+  /* object-fit: cover; */
+  border-radius: 8px;
+  height: 500px;
+  margin-left: 4rem;
+  display: flex;
+  justify-content: center;
 
   @media only screen and (min-width: 300px) {
     width: 300px;

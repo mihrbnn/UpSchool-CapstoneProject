@@ -22,16 +22,18 @@ export const fetchMovie = (movieId) =>
 export const fetchCast = (movieId) =>
   BASE_URL.get(`/movie/${movieId}/credits?api_key=${api_key}`);
 
-//sort;
-export const fetchSortFilter = (sortValue, startDate, endDate, genre) =>
-  BASE_URL.get(
-    `/discover/movie?api_key=${api_key}&sort_by=${sortValue}&release_date.lte=${startDate}&release_date.gte=${endDate}&with_genres=${genre}`
-  );
+// //sort;
+// export const fetchSortFilter = (sortValue, startDate, endDate, genre) =>
+//   BASE_URL.get(
+//     `/discover/movie?api_key=${api_key}&sort_by=${sortValue}&release_date.lte=${startDate}&release_date.gte=${endDate}&with_genres=${genre}`
+//   );
 
 //top rated-popular
 export const fetchTopRatedPopular = (category, page) =>
   BASE_URL.get(`/movie/${category}?api_key=${api_key}&page=${page}`);
 
-// //popular
-// export const fetchPopular = (page) =>
-//   BASE_URL.get(`/movie/popular?api_key=${api_key}&page=${page}`);
+//sort;
+export const fetchSortFilter = (page, sortValue, startDate, endDate, genre) =>
+  BASE_URL.get(
+    `/discover/movie?api_key=${api_key}&page=${page}&sort_by=${sortValue}&release_date.lte=${startDate}&release_date.gte=${endDate}&with_genres=${genre}`
+  );

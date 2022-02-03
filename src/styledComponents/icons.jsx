@@ -32,6 +32,7 @@ const InstagramIcon = styled(BsInstagram)`
 
 const TwitterIcon = styled(BsTwitter)`
   font-size: 25px;
+  margin-left: 18px;
   color: ${(props) => props.theme.BUTTON_COLOR};
 `;
 

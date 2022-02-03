@@ -8,17 +8,22 @@ import {
   NavList,
   NavLink,
   LogOutIcon,
+  DropDownList,
+  DropDown,
 } from "../../styledComponents";
-// import ChangeThemeButton from "../../styledComponents/styledToggler";
 import { useSelector, useDispatch } from "react-redux";
 import { changeTheme } from "../../reduxStore/theme";
 import { Link } from "react-router-dom";
 import { userLogin } from "../../reduxStore/userLogin";
+import { useState } from "react";
 const Navbar = (props) => {
   const state = useSelector((state) => state);
   const user = useSelector((state) => state.user);
+  const [toggle, setToggle] = useState(false);
+  const popular = "popular";
+  const topRated = "top_rated";
   const dispatch = useDispatch();
-  console.log("navuser", state.user.isLogin);
+
   return (
     <div>
       <Nav>
@@ -28,7 +33,7 @@ const Navbar = (props) => {
             Movie
           </NavLogo>
 
-          <div className={`dropend me-auto bg-transparent`}>
+          {/* <div className={`dropend me-auto bg-transparent`}>
             <button
               className="btn btn-secondary dropdown-toggle bg-transparent btn-outline-none"
               type="button"
@@ -53,6 +58,27 @@ const Navbar = (props) => {
                 </Link>
               </li>
             </ul>
+          </div> */}
+          <div
+            flexDirection="column"
+            align="center"
+            justify="center"
+            onMouseLeave={() => setToggle(!toggle)}
+            onMouseEnter={() => setToggle(!toggle)}
+          >
+            <DropDown>
+              <span>Movies</span>{" "}
+            </DropDown>
+            <DropDownList display={toggle === true ? "block" : "none"}>
+              <ul>
+                <li>
+                  <Link to="sortfilter/popular">Popular</Link>
+                </li>
+                <li>
+                  <Link to="sortfilter/top_rated">Top Rated</Link>
+                </li>
+              </ul>
+            </DropDownList>
           </div>
           <Ul>
             <NavList>
@@ -96,9 +122,7 @@ const Navbar = (props) => {
               <NavLink to="#">
                 <LogOutIcon
                   onClick={() => dispatch(userLogin(!state.user.isLogin))}
-                >
-                  Çıkış
-                </LogOutIcon>
+                ></LogOutIcon>
               </NavLink>
             </NavList>
           </Ul>
