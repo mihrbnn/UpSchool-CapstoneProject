@@ -93,6 +93,7 @@ const DropDownList = styled.div`
   background-color: ${(props) => props.theme.BACKGROUND_COLOR};
   padding: 5px 15px;;
   border-radius: 0 0 5px 5px;
+  text-align:start;
   z-index: 10;
   & > ul {
     margin: 0;

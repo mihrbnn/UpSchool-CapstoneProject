@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 412a45491292d4c09d369104b61e9bb2140483e8
 import {
   fetchSortFilter,
   fetchTopRatedPopular,
@@ -100,7 +95,6 @@ const SortFilter = () => {
           ))}
         </Select>
         <br />
-        <h5 className="mb-4 ms-4">Sort by:</h5>
         <Select
           className="form-select"
           onChange={(e) => setSortValue(e.target.value)}

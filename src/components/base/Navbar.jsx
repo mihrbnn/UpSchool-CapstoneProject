@@ -11,6 +11,7 @@ import {
   DropDownList,
   DropDown,
 } from "../../styledComponents";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { changeTheme } from "../../reduxStore/theme";
 import { Link } from "react-router-dom";
@@ -49,29 +50,36 @@ const Navbar = (props) => {
             <NavIcon />
             Movie
           </NavLogo>
-          <div
-            align="center"
-            justify="center"
-            onMouseLeave={() => setMovieToggle(!movieToggle)}
-            onMouseEnter={() => setMovieToggle(!movieToggle)}
-          >
-            <DropDown>
-              <span>Movies</span>{" "}
-            </DropDown>
-            <DropDownList display={movieToggle === true ? "block" : "none"}>
-              <ul>
-                <li>
-                  <Link to="sortfilter/popular">Popular</Link>
-                </li>
-                <li>
-                  <Link to="sortfilter/top_rated">Top Rated</Link>
-                </li>
-              </ul>
-            </DropDownList>
-          </div>
+
           {!isMobile && (
             <div>
               <Ul>
+                <NavList>
+                  <NavLink to="#">
+                    <div
+                      align="center"
+                      justify="center"
+                      onClick={() => setMovieToggle(!movieToggle)}
+                      // onMouseEnter={() => setMovieToggle(!movieToggle)}
+                    >
+                      <DropDown>
+                        <span>Movies</span>
+                      </DropDown>
+                      <DropDownList
+                        display={movieToggle === true ? "block" : "none"}
+                      >
+                        <ul>
+                          <li>
+                            <Link to="sortfilter/popular">Popular</Link>
+                          </li>
+                          <li>
+                            <Link to="sortfilter/top_rated">Top Rated</Link>
+                          </li>
+                        </ul>
+                      </DropDownList>
+                    </div>
+                  </NavLink>
+                </NavList>
                 <NavList>
                   <NavLink to="#">
                     <ThemeButton
