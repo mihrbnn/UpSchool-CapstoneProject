@@ -50,7 +50,7 @@ const Card = (props) => {
         )}
 
         <CardButton>
-          <CardLink className="text-white" to={`${id}`}>
+          <CardLink className="text-white" to={`/${id}`}>
             MORE DETAIL
           </CardLink>
         </CardButton>

@@ -35,5 +35,5 @@ export const fetchTopRatedPopular = (category, page) =>
 //sort;
 export const fetchSortFilter = (page, sortValue, startDate, endDate, genre) =>
   BASE_URL.get(
-    `/discover/movie?api_key=${api_key}&page=${page}&sort_by=${sortValue}&release_date.lte=${startDate}&release_date.gte=${endDate}&with_genres=${genre}`
+    `/discover/movie?api_key=${api_key}&page=${page}&sort_by=${sortValue}&release_date.gte=${startDate}&release_date.lte=${endDate}&with_genres=${genre}`
   );

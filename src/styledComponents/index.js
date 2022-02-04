@@ -78,6 +78,8 @@ import {
   TD,
 } from "../styledComponents/styledTable";
 
+import { Select } from "../styledComponents/styledSelectOption";
+
 export {
   Nav,
   NavbarContainer,
@@ -138,4 +140,5 @@ export {
   TR,
   TH,
   TD,
+  Select,
 };
