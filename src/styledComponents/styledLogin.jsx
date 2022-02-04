@@ -14,11 +14,12 @@ const LoginContainer = styled.div`
 `;
 
 const InputContainer = styled.div`
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 60%;
+  height: 50%;
   width: 80%;
 `;
 

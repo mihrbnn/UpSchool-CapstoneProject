@@ -37,6 +37,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button
+            className="mt-3"
             type="submit"
             onClick={() => {
               dispatch(userLogin(userName, password));

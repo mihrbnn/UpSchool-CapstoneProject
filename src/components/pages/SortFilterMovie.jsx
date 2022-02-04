@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 417fbf45a72cbba6f2ae262649b07d503045fd55
 import {
   fetchSortFilter,
   fetchTopRatedPopular,
