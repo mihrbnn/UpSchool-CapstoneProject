@@ -59,9 +59,13 @@ I built a movie website with [TMDB API](https://www.themoviedb.org/)
 
 - [ ] Detail Page 
   - [ ] Reviews and recommendations
+- Sign in page
 
 
 [Live Demo](https://tmdbmoviee.netlify.app/)
+
+username: user
+password: 123
  
 
 
