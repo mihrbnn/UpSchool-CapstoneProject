@@ -91,7 +91,7 @@ const DropDownList = styled.div`
   position: absolute;
   transition: all 0.15s linear;
   background-color: ${(props) => props.theme.BACKGROUND_COLOR};
-  padding: 5px 15px;;
+  padding: 5px 15px;
   border-radius: 0 0 5px 5px;
   text-align:start;
   z-index: 10;
@@ -110,7 +110,6 @@ const DropDownList = styled.div`
         font-weight: 600;
       }
     }
-  }
   }
 `;
 

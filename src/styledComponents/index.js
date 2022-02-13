@@ -27,7 +27,9 @@ import {
   SearchButton,
 } from "../styledComponents/styledSearch";
 import { GlobalStyle, Container } from "../styledComponents/globalStyles";
+
 import { Button } from "../styledComponents/styledButton";
+
 import {
   MovieContainer,
   MovieContent,

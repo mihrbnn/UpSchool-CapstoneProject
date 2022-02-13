@@ -1,3 +1,9 @@
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import routes from "../../routes";
+import { changeTheme } from "../../reduxStore/theme";
+import { userLogin } from "../../reduxStore/userLogin";
 import {
   Nav,
   NavbarContainer,
@@ -11,12 +17,6 @@ import {
   DropDownList,
   DropDown,
 } from "../../styledComponents";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { useSelector, useDispatch } from "react-redux";
-import { changeTheme } from "../../reduxStore/theme";
-import { Link } from "react-router-dom";
-import { userLogin } from "../../reduxStore/userLogin";
-import { useState, useEffect } from "react";
 
 const Navbar = (props) => {
   const state = useSelector((state) => state);
@@ -60,7 +60,6 @@ const Navbar = (props) => {
                       align="center"
                       justify="center"
                       onClick={() => setMovieToggle(!movieToggle)}
-                      // onMouseEnter={() => setMovieToggle(!movieToggle)}
                     >
                       <DropDown>
                         <span>Movies</span>
@@ -93,68 +92,108 @@ const Navbar = (props) => {
                 <NavList>
                   <NavLink to="/about">About</NavLink>
                 </NavList>
-                <NavList>
-                  <NavLink to="/login">Login</NavLink>
-                </NavList>
-                <NavList>
-                  <NavLink to="/profile" className="mt-2">
-                    {user.isLogin ? (
-                      <img
-                        className="rounded-circle"
-                        width="60"
-                        height="60"
-                        src="https://picsum.photos/id/1027/200/200"
-                        alt=""
-                      />
-                    ) : (
-                      <img
-                        className="rounded-circle"
-                        width="60"
-                        height="60"
-                        src="https://picsum.photos/id/433/200/200"
-                        alt=""
-                      />
-                    )}
-                  </NavLink>
-                </NavList>
+                {user.isLogin ? (
+                  <>
+                    <NavList>
+                      <NavLink to="/profile" className="mt-2">
+                        {user.isLogin && (
+                          <img
+                            className="rounded-circle"
+                            width="60"
+                            height="60"
+                            src="https://picsum.photos/id/1027/200/200"
+                            alt=""
+                          />
+                        )}
+                      </NavLink>
+                    </NavList>
+                    <NavList>
+                      <NavLink to="#">
+                        <LogOutIcon
+                          onClick={() =>
+                            dispatch(userLogin(!state.user.isLogin))
+                          }
+                        ></LogOutIcon>
+                      </NavLink>
+                    </NavList>
+                  </>
+                ) : (
+                  <>
+                    <NavList>
+                      <NavLink to="/login">Login</NavLink>
+                    </NavList>
+                    <NavList>
+                      <NavLink to="/signup">Sign Up</NavLink>
+                    </NavList>
+                  </>
+                )}
               </Ul>
             </div>
           )}
           {isMobile && (
-            <div
-              align="center"
-              justify="center"
-              onMouseLeave={() => setMenuToggle(!menuToggle)}
-              onMouseEnter={() => setMenuToggle(!menuToggle)}
-            >
-              <DropDown>
-                <span>Menu</span>{" "}
-              </DropDown>
-              <DropDownList display={menuToggle === true ? "block" : "none"}>
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/about">About</Link>
-                  </li>
-                  <li>
-                    <Link to="/login">Login</Link>
-                  </li>
-                  <li>
-                    <Link to="/profile">Profile</Link>
-                  </li>
-                </ul>
-              </DropDownList>
-            </div>
+            <>
+              <li className="list-unstyled">
+                <Link to="#">
+                  <ThemeButton
+                    onClick={() => dispatch(changeTheme(state.theme))}
+                  />
+                </Link>
+              </li>
+              <div
+                align="center"
+                justify="center"
+                onMouseLeave={() => setMenuToggle(!menuToggle)}
+                onMouseEnter={() => setMenuToggle(!menuToggle)}
+              >
+                <DropDown>
+                  <span>Menu</span>{" "}
+                </DropDown>
+                <DropDownList display={menuToggle === true ? "block" : "none"}>
+                  <ul>
+                    {routes
+                      .filter((item) => item.isNav)
+                      .map((item, index) => (
+                        <li>
+                          <Link to={item.path}>{item.title}</Link>
+                        </li>
+                      ))}
+                    <li>
+                      <Link to="sortfilter/popular">Popular</Link>
+                    </li>
+                    <li>
+                      <Link to="sortfilter/top_rated">Top Rated</Link>
+                    </li>
+                    {user.isLogin ? (
+                      <>
+                        <li>
+                          <Link to="/profile">Profile</Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="#"
+                            onClick={() =>
+                              dispatch(userLogin(!state.user.isLogin))
+                            }
+                          >
+                            Log Out
+                          </Link>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li>
+                          <Link to="/login">Login</Link>
+                        </li>
+                        <li>
+                          <Link to="/signup">Sign Up</Link>
+                        </li>
+                      </>
+                    )}
+                  </ul>
+                </DropDownList>
+              </div>
+            </>
           )}
-          <NavList>
-            <NavLink to="#">
-              <LogOutIcon
-                onClick={() => dispatch(userLogin(!state.user.isLogin))}
-              ></LogOutIcon>
-            </NavLink>
-          </NavList>
         </NavbarContainer>
       </Nav>
     </div>
